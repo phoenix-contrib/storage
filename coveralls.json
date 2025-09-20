@@ -1,0 +1,14 @@
+{
+  "coverage_options": {
+    "treat_no_relevant_lines_as_covered": true,
+    "output_dir": "cover/",
+    "template_path": "cover/excoveralls.html.eex"
+  },
+  "terminal_options": {
+    "file_column_width": 40
+  },
+  "skip_files": [
+    "test/",
+    "examples/"
+  ]
+}

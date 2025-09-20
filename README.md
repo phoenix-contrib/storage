@@ -1,5 +1,10 @@
 # Storage
 
+[![CI](https://github.com/phoenix-contrib/storage/workflows/CI/badge.svg)](https://github.com/phoenix-contrib/storage/actions/workflows/ci.yml)
+[![Hex.pm](https://img.shields.io/hexpm/v/storage.svg)](https://hex.pm/packages/storage)
+[![Documentation](https://img.shields.io/badge/documentation-gray)](https://hexdocs.pm/storage/)
+[![Hex.pm Downloads](https://img.shields.io/hexpm/dt/storage.svg)](https://hex.pm/packages/storage)
+
 ActiveStorage-like file storage for Phoenix. All things file uploads for your Phoenix app following the design principles applied in Rails ActiveStorage but adapted to the Phoenix framework.
 
 ## Features
@@ -205,6 +210,26 @@ config :storage,
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+### Development Setup
+
+1. Clone the repository
+2. Install dependencies: `mix deps.get`
+3. Run tests: `mix test`
+4. Check code quality: `mix credo --strict`
+5. Check types: `mix dialyzer`
+6. Format code: `mix format`
+
+### Code Quality
+
+This project maintains high code quality standards:
+
+- **Tests**: Comprehensive test suite with >90% coverage
+- **Linting**: Code linting with Credo in strict mode
+- **Type Checking**: Static analysis with Dialyzer
+- **Formatting**: Consistent code formatting with `mix format`
+- **Documentation**: All public functions are documented
+- **CI/CD**: Automated testing, linting, and type checking on all PRs
 
 ## License
 

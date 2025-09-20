@@ -42,3 +42,15 @@ storage-*.tar
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Dialyzer PLT files
+/priv/plts/
+
+# Coverage reports
+/cover/
+coverage/
+lcov.info
+*.lcov
+
+# Test artifacts
+.test_artifacts/
