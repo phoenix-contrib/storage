@@ -42,7 +42,7 @@ defmodule PhoenixContribStorage.MixProject do
       {:ecto, "~> 3.10"},
       {:ecto_sql, "~> 3.10"},
       {:phoenix, "~> 1.7"},
-      {:phoenix_live_view, "~> 0.20"},
+      {:phoenix_live_view, "~> 1.1"},
       {:plug, "~> 1.14"},
       {:jason, "~> 1.4"},
       {:mime, "~> 2.0"},
