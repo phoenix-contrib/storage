@@ -76,7 +76,8 @@ defmodule PhoenixContribStorage.MixProject do
       main: "Storage",
       source_ref: "v#{@version}",
       source_url: @source_url,
-      extras: ["README.md"]
+      extras: ["README.md"],
+      formatters: ["html"]
     ]
   end
 end
