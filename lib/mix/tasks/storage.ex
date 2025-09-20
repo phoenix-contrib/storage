@@ -109,7 +109,7 @@ defmodule Mix.Tasks.Storage.Migrate do
       {"002_create_storage_attachments.exs", "#{timestamp + 1}_create_storage_attachments.exs"}
     ]
 
-    Enum.each(migrations, fn {source, target} do
+    Enum.each(migrations, fn {source, target} ->
       source_file = Path.join(migrations_path, source)
       target_file = Path.join(target_path, target)
 
