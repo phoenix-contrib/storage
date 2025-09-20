@@ -25,7 +25,7 @@ jobs:
           otp-version: '26'
 
       - name: Cache Mix dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             deps
@@ -78,7 +78,7 @@ jobs:
           otp-version: '26'
 
       - name: Cache Mix dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             deps
