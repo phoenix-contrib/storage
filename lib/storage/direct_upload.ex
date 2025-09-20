@@ -57,8 +57,8 @@ defmodule Storage.DirectUpload do
       raise ArgumentError, "byte_size is required for direct uploads"
 
     service_name = Keyword.get(opts, :service_name) || Config.default_service()
-    expires_in = Keyword.get(opts, :expires_in, 3600)
-    max_file_size = Keyword.get(opts, :max_file_size, 100_000_000)
+    _expires_in = Keyword.get(opts, :expires_in, 3600)
+    _max_file_size = Keyword.get(opts, :max_file_size, 100_000_000)
     metadata = Keyword.get(opts, :metadata, %{})
 
     key = generate_key(filename)

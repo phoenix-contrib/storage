@@ -97,7 +97,7 @@ defmodule Storage.Plug do
 
   defp maybe_put_etag(conn, _blob, _opts), do: conn
 
-  defp maybe_gzip(conn, data, %{gzip: true}) do
+  defp maybe_gzip(conn, _data, %{gzip: true}) do
     case get_req_header(conn, "accept-encoding") do
       [encoding] when is_binary(encoding) ->
         if String.contains?(encoding, "gzip") do

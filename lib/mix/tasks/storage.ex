@@ -175,7 +175,8 @@ defmodule Mix.Tasks.Storage.Analyze do
 
     query =
       unless opts[:force] do
-        from b in query, where: b.metadata == %{} or is_nil(b.metadata)
+        empty_map = %{}
+        from b in query, where: b.metadata == ^empty_map or is_nil(b.metadata)
       else
         query
       end
