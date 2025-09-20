@@ -13,7 +13,7 @@ defmodule PhoenixContribStorage.MixProject do
       deps: deps(),
       description: description(),
       package: package(),
-      docs: docs(),
+      docs: [],
       name: "PhoenixContribStorage",
       source_url: @source_url,
       test_coverage: [tool: ExCoveralls],
@@ -71,13 +71,14 @@ defmodule PhoenixContribStorage.MixProject do
     ]
   end
 
+  # FIXME: Publishing docs require some Hex configuration in the account
+  # Figure out
   defp docs do
     [
       main: "Storage",
       source_ref: "v#{@version}",
       source_url: @source_url,
-      extras: ["README.md"],
-      formatters: ["html"]
+      extras: ["README.md"]
     ]
   end
 end
