@@ -5,7 +5,7 @@
 # 1. Configuration (config/config.exs)
 # ============================================================================
 
-# config :storage,
+# config :phoenix_contrib_storage,
 #   repo: MyApp.Repo,
 #   default_service: :local,
 #   services: %{

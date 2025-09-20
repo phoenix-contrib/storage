@@ -11,7 +11,7 @@ defmodule Storage.Services.S3 do
 
   ## Configuration
 
-      config :storage,
+      config :phoenix_contrib_storage,
         services: %{
           s3: {Storage.Services.S3, 
             bucket: "my-bucket",

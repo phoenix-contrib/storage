@@ -1,4 +1,4 @@
-defmodule Storage.MixProject do
+defmodule PhoenixContribStorage.MixProject do
   use Mix.Project
 
   @version "0.1.0"
@@ -6,7 +6,7 @@ defmodule Storage.MixProject do
 
   def project do
     [
-      app: :storage,
+      app: :phoenix_contrib_storage,
       version: @version,
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
@@ -14,7 +14,7 @@ defmodule Storage.MixProject do
       description: description(),
       package: package(),
       docs: docs(),
-      name: "Storage",
+      name: "PhoenixContribStorage",
       source_url: @source_url,
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [

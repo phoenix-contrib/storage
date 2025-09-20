@@ -1,9 +1,9 @@
 # Storage
 
 [![CI](https://github.com/phoenix-contrib/storage/workflows/CI/badge.svg)](https://github.com/phoenix-contrib/storage/actions/workflows/ci.yml)
-[![Hex.pm](https://img.shields.io/hexpm/v/storage.svg)](https://hex.pm/packages/storage)
-[![Documentation](https://img.shields.io/badge/documentation-gray)](https://hexdocs.pm/storage/)
-[![Hex.pm Downloads](https://img.shields.io/hexpm/dt/storage.svg)](https://hex.pm/packages/storage)
+[![Hex.pm](https://img.shields.io/hexpm/v/phoenix_contrib_storage.svg)](https://hex.pm/packages/phoenix_contrib_storage)
+[![Documentation](https://img.shields.io/badge/documentation-gray)](https://hexdocs.pm/phoenix_contrib_storage/)
+[![Hex.pm Downloads](https://img.shields.io/hexpm/dt/phoenix_contrib_storage.svg)](https://hex.pm/packages/phoenix_contrib_storage)
 
 ActiveStorage-like file storage for Phoenix. All things file uploads for your Phoenix app following the design principles applied in Rails ActiveStorage but adapted to the Phoenix framework.
 
@@ -18,12 +18,12 @@ ActiveStorage-like file storage for Phoenix. All things file uploads for your Ph
 
 ## Installation
 
-Add `storage` to your list of dependencies in `mix.exs`:
+Add `phoenix_contrib_storage` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:storage, "~> 0.1.0"}
+    {:phoenix_contrib_storage, "~> 0.1.0"}
   ]
 end
 ```
@@ -33,7 +33,7 @@ end
 Add to your `config/config.exs`:
 
 ```elixir
-config :storage,
+config :phoenix_contrib_storage,
   repo: MyApp.Repo,
   default_service: :local,
   services: %{
@@ -161,7 +161,7 @@ get "/storage/:key/download", Storage.Controller, :download
 ### Local Filesystem
 
 ```elixir
-config :storage,
+config :phoenix_contrib_storage,
   services: %{
     local: {Storage.Services.Local, root: "priv/storage"}
   }
@@ -170,7 +170,7 @@ config :storage,
 ### Amazon S3
 
 ```elixir
-config :storage,
+config :phoenix_contrib_storage,
   services: %{
     s3: {Storage.Services.S3, 
       bucket: "my-bucket", 

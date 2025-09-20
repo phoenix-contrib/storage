@@ -7,14 +7,14 @@ defmodule Storage.Config do
   Returns the default service name.
   """
   def default_service do
-    Application.get_env(:storage, :default_service, :local)
+    Application.get_env(:phoenix_contrib_storage, :default_service, :local)
   end
 
   @doc """
   Returns all configured services.
   """
   def services do
-    Application.get_env(:storage, :services, %{
+    Application.get_env(:phoenix_contrib_storage, :services, %{
       local: {Storage.Services.Local, root: "/tmp/storage"}
     })
   end
@@ -41,6 +41,6 @@ defmodule Storage.Config do
   Returns the Repo module to use for database operations.
   """
   def repo do
-    Application.get_env(:storage, :repo) || raise "Storage repo not configured"
+    Application.get_env(:phoenix_contrib_storage, :repo) || raise "Storage repo not configured"
   end
 end

@@ -41,8 +41,8 @@ defmodule Storage.Repo do
   end
 
   defp repo do
-    case Application.get_env(:storage, :repo) do
-      nil -> raise "Storage repo not configured. Please set config :storage, :repo, MyApp.Repo"
+    case Application.get_env(:phoenix_contrib_storage, :repo) do
+      nil -> raise "Storage repo not configured. Please set config :phoenix_contrib_storage, :repo, MyApp.Repo"
       repo -> repo
     end
   end
