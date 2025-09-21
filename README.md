@@ -13,7 +13,6 @@ ActiveStorage-like file storage for Phoenix. All things file uploads for your Ph
 - **Direct uploads**: Signed URLs for client-side uploads
 - **Image processing**: Built-in support for variants and transformations
 - **Ecto integration**: Seamless attachment associations with your schemas
-- **Phoenix LiveView support**: Helper functions for file uploads
 - **Configurable**: Easy configuration for different environments
 
 ## Installation
@@ -73,13 +72,13 @@ defmodule MyApp.User do
 
   schema "users" do
     field :name, :string
-    
+
     # Single file attachment
     has_one_attached :avatar
-    
+
     # Multiple file attachments
     has_many_attached :documents
-    
+
     timestamps()
   end
 end
@@ -97,36 +96,6 @@ user.avatar_attached?(user)  # true/false
 # Get attachments
 avatar = user.avatar(user)
 documents = user.documents(user)
-```
-
-### Phoenix LiveView Integration
-
-```elixir
-defmodule MyAppWeb.UserLive do
-  use MyAppWeb, :live_view
-  
-  def mount(_params, _session, socket) do
-    socket =
-      socket
-      |> allow_upload(:avatar, Storage.LiveView.upload_options(
-        accept: ~w(.jpg .jpeg .png),
-        max_entries: 1,
-        max_file_size: 5_000_000
-      ))
-    
-    {:ok, socket}
-  end
-  
-  def handle_event("save", %{"user" => user_params}, socket) do
-    uploaded_files =
-      consume_uploaded_entries(socket, :avatar, fn %{path: path}, entry ->
-        {:ok, Storage.LiveView.consume_uploaded_entry(path, entry)}
-      end)
-    
-    # Use uploaded_files with your changeset...
-    {:noreply, socket}
-  end
-end
 ```
 
 ### File Serving
@@ -172,8 +141,8 @@ config :phoenix_contrib_storage,
 ```elixir
 config :phoenix_contrib_storage,
   services: %{
-    s3: {Storage.Services.S3, 
-      bucket: "my-bucket", 
+    s3: {Storage.Services.S3,
+      bucket: "my-bucket",
       region: "us-east-1",
       access_key_id: "...",
       secret_access_key: "..."

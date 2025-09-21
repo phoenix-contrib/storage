@@ -11,7 +11,6 @@ defmodule Storage do
   - Direct uploads with signed URLs
   - Image processing and variants
   - Ecto schema integration
-  - Phoenix LiveView support
   - Configurable storage services
 
   ## Configuration
@@ -39,20 +38,9 @@ defmodule Storage do
           has_many_attached :documents
         end
       end
-
-  ### In your LiveView
-
-      def handle_event("save", %{"user" => user_params}, socket) do
-        uploaded_files =
-          consume_uploaded_entries(socket, :avatar, fn %{path: path}, entry ->
-            {:ok, Storage.put_file(path, filename: entry.client_name)}
-          end)
-
-        # Use uploaded_files...
-      end
   """
 
-  alias Storage.{Blob, Attachment}
+  alias Storage.Blob
 
   @doc """
   Stores a file and returns a Blob struct.
