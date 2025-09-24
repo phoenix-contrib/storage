@@ -4,25 +4,21 @@
       name: "default",
       files: %{
         included: [
-          "lib/",
-          "src/",
-          "test/",
-          "web/",
-          "apps/*/lib/",
-          "apps/*/src/",
-          "apps/*/test/",
-          "apps/*/web/"
+          "packages/*/lib/",
+          "packages/*/test/"
         ],
-        excluded: [~r"/_build/", ~r"/deps/", ~r"/node_modules/"]
+        excluded: [
+          ~r"/_build/",
+          ~r"/deps/",
+          ~r"assets/node_modules/"
+        ]
       },
-      plugins: [],
-      requires: [],
       strict: true,
-      parse_timeout: 5000,
       color: true,
+      parse_timeout: 5000,
       checks: [
         #
-        ## Consistency Checks
+        ## Consistency
         #
         {Credo.Check.Consistency.ExceptionNames, []},
         {Credo.Check.Consistency.LineEndings, []},
@@ -32,15 +28,14 @@
         {Credo.Check.Consistency.TabsOrSpaces, []},
 
         #
-        ## Design Checks
+        ## Design
         #
-        {Credo.Check.Design.AliasUsage,
-         [priority: :low, if_nested_deeper_than: 2, if_called_more_often_than: 0]},
+        {Credo.Check.Design.AliasUsage, [priority: :low, if_nested_deeper_than: 2, if_called_more_often_than: 0]},
         {Credo.Check.Design.TagTODO, [exit_status: 2]},
         {Credo.Check.Design.TagFIXME, []},
 
         #
-        ## Readability Checks
+        ## Readability
         #
         {Credo.Check.Readability.AliasOrder, []},
         {Credo.Check.Readability.FunctionNames, []},
@@ -63,7 +58,7 @@
         {Credo.Check.Readability.VariableNames, []},
 
         #
-        ## Refactoring Opportunities
+        ## Refactoring
         #
         {Credo.Check.Refactor.CondStatements, []},
         {Credo.Check.Refactor.CyclomaticComplexity, []},
@@ -103,3 +98,4 @@
     }
   ]
 }
+
